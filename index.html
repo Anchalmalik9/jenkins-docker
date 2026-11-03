@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My DevOps Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #2563eb;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .about {
+            background-color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My DevOps Project</h1>
+        <p>Automated Website Deployment using Jenkins and Docker</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="home">
+
+        <h2>Welcome to My Website!</h2>
+
+        <p>
+            This website is deployed using a Jenkins CI/CD pipeline
+            and hosted inside a Docker container.
+        </p>
+
+        <button onclick="alert('Website is working successfully!')">
+            Click Here
+        </button>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <h2>About This Project</h2>
+
+        <p>
+            This project demonstrates Continuous Integration,
+            Continuous Deployment and Docker containerization.
+        </p>
+
+    </section>
+
+    <footer id="contact">
+        <p>Created using HTML, CSS, Jenkins and Docker</p>
+    </footer>
+
+</body>
+</html>

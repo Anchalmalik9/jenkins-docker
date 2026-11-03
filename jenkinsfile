@@ -1,0 +1,61 @@
+
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Fetching source code from GitHub'
+
+                checkout scm
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Checking HTML file'
+
+                bat 'if exist index.html (echo HTML file found) else (exit /b 1)'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker image'
+
+                bat 'docker build -t my-html-website:latest .'
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                echo 'Deploying website using Docker'
+
+                bat 'docker rm -f html-container || exit /b 0'
+
+                bat 'docker run -d --name html-container -p 8080:80 my-html-website:latest'
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                echo 'Checking running Docker container'
+
+                bat 'docker ps'
+            }
+        }
+    }
+
+    post {
+
+        success {
+            echo 'Website deployed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline execution failed!'
+        }
+    }
+}
